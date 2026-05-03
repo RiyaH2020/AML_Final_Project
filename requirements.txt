@@ -1,0 +1,32 @@
+# ── Core ──────────────────────────────────────────────────
+python-dotenv
+pydantic
+tqdm
+pandas
+numpy
+
+# ── NLP & Embeddings ──────────────────────────────────────
+sentence-transformers
+transformers
+torch
+
+# ── Graph Database ────────────────────────────────────────
+neo4j
+
+# ── Vector Store ──────────────────────────────────────────
+chromadb
+
+# ── LLM APIs (install all; use whichever you have a key for)
+anthropic
+openai
+groq
+
+# ── Web / API ─────────────────────────────────────────────
+fastapi
+uvicorn
+streamlit
+httpx
+
+# ── Utilities ─────────────────────────────────────────────
+requests
+aiofiles
