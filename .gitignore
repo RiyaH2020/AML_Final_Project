@@ -11,3 +11,5 @@ wheels/
 .venv/
 chroma_db/
 *.sqlite3
+chroma_db_corrupted/
+scratch_test.py

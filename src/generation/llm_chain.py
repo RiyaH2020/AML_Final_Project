@@ -84,11 +84,26 @@ class LegalRAGChain:
 
     # ── Public ────────────────────────────────────────────────────────────────
 
-    def query(self, user_query: str, history: List[dict] = None) -> LegalResearchResponse:
-        result   = self.retriever.retrieve(user_query)
-        context  = _format_context(result)
-        prompt   = _RAG_TEMPLATE.format(context=context, query=user_query)
-        answer   = self._generate(prompt, history)
+    def query(self, user_query: str, history: List[dict] = None, image: str = None) -> LegalResearchResponse:
+        import string
+        clean_q = user_query.strip().lower().translate(str.maketrans('', '', string.punctuation))
+        if clean_q in {"hi", "hello", "hey", "good morning", "good evening", "good afternoon", "greetings"}:
+            self.last_result = RetrievalResult(chunks=[], graph_hits=0, vector_hits=0)
+            return LegalResearchResponse(
+                query=user_query,
+                answer="Hi. I am your legal Assistant . tell me how may i help you",
+                sources=[],
+                graph_hits=0,
+                vector_hits=0,
+                model_used=config.LLM_MODEL
+            )
+
+        result  = self.retriever.retrieve(user_query)
+        self.last_result = result
+        context = _format_context(result)
+        prompt  = _RAG_TEMPLATE.format(context=context, query=user_query)
+        
+        answer  = self._generate(prompt, history, image=image)
 
         return LegalResearchResponse(
             query       = user_query,
@@ -108,23 +123,48 @@ class LegalRAGChain:
             model_used  = config.LLM_MODEL,
         )
 
-    def stream_query(self, user_query: str, history: List[dict] = None) -> Generator[str, None, None]:
+    def stream_query(self, user_query: str, history: List[dict] = None, image: str = None) -> Generator[str, None, None]:
+        import string
+        clean_q = user_query.strip().lower().translate(str.maketrans('', '', string.punctuation))
+        if clean_q in {"hi", "hello", "hey", "good morning", "good evening", "good afternoon", "greetings"}:
+            self.last_result = RetrievalResult(chunks=[], graph_hits=0, vector_hits=0)
+            yield "Hi. I am your legal Assistant . tell me how may i help you"
+            return
+
         result  = self.retriever.retrieve(user_query)
+        self.last_result = result
         context = _format_context(result)
         prompt  = _RAG_TEMPLATE.format(context=context, query=user_query)
-        yield from self._stream(prompt, history)
+        yield from self._stream(prompt, history, image=image)
 
     # ── LLM calls ─────────────────────────────────────────────────────────────
 
-    def _generate(self, prompt: str, history: List[dict] = None) -> str:
+    def _generate(self, prompt: str, history: List[dict] = None, image: str = None) -> str:
         if history is None: history = []
         p = config.LLM_PROVIDER
+        model = config.LLM_MODEL
+        llm_client = self._llm
+
+        if image:
+            # Route vision request to Groq explicitly
+            p = "groq"
+            model = "llama-3.2-11b-vision-preview"
+            from groq import Groq
+            llm_client = Groq(api_key=config.GROQ_API_KEY)
+            
+            user_content = [
+                {"type": "text", "text": prompt},
+                {"type": "image_url", "image_url": {"url": f"data:image/jpeg;base64,{image}"}}
+            ]
+        else:
+            user_content = prompt
+
         messages = [{"role": msg["role"], "content": msg["content"]} for msg in history]
-        messages.append({"role": "user", "content": prompt})
+        messages.append({"role": "user", "content": user_content})
 
         if p == "anthropic":
-            r = self._llm.messages.create(
-                model=config.LLM_MODEL, max_tokens=2048,
+            r = llm_client.messages.create(
+                model=model, max_tokens=2048,
                 system=_SYSTEM,
                 messages=messages,
             )
@@ -132,23 +172,40 @@ class LegalRAGChain:
 
         if p in ("openai", "groq", "ollama"):
             full_messages = [{"role": "system", "content": _SYSTEM}] + messages
-            r = self._llm.chat.completions.create(
-                model=config.LLM_MODEL, max_tokens=2048, temperature=0.1,
+            r = llm_client.chat.completions.create(
+                model=model, max_tokens=2048, temperature=0.1,
                 messages=full_messages,
             )
             return r.choices[0].message.content
 
         return "Error: LLM provider not configured."
 
-    def _stream(self, prompt: str, history: List[dict] = None) -> Generator[str, None, None]:
+    def _stream(self, prompt: str, history: List[dict] = None, image: str = None) -> Generator[str, None, None]:
         if history is None: history = []
         p = config.LLM_PROVIDER
+        model = config.LLM_MODEL
+        llm_client = self._llm
+
+        if image:
+            # Route vision request to Groq explicitly
+            p = "groq"
+            model = "llama-3.2-11b-vision-preview"
+            from groq import Groq
+            llm_client = Groq(api_key=config.GROQ_API_KEY)
+            
+            user_content = [
+                {"type": "text", "text": prompt},
+                {"type": "image_url", "image_url": {"url": f"data:image/jpeg;base64,{image}"}}
+            ]
+        else:
+            user_content = prompt
+
         messages = [{"role": msg["role"], "content": msg["content"]} for msg in history]
-        messages.append({"role": "user", "content": prompt})
+        messages.append({"role": "user", "content": user_content})
 
         if p == "anthropic":
-            with self._llm.messages.stream(
-                model=config.LLM_MODEL, max_tokens=2048,
+            with llm_client.messages.stream(
+                model=model, max_tokens=2048,
                 system=_SYSTEM,
                 messages=messages,
             ) as s:
@@ -156,8 +213,8 @@ class LegalRAGChain:
 
         elif p in ("openai", "groq", "ollama"):
             full_messages = [{"role": "system", "content": _SYSTEM}] + messages
-            stream = self._llm.chat.completions.create(
-                model=config.LLM_MODEL, max_tokens=2048, stream=True,
+            stream = llm_client.chat.completions.create(
+                model=model, max_tokens=2048, stream=True,
                 messages=full_messages,
             )
             for chunk in stream:
