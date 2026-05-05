@@ -1,0 +1,31 @@
+entity_type,entity_name,case_count
+LegalConcept,assessment order,3
+Statute,Section 482 Cr.P.C.,2
+LegalConcept,stay of execution,2
+LegalConcept,reservation,3
+Statute,Section 341 IPC,2
+Statute,Article 226 of the Constitution of India,6
+Judge,Mehr Chand Mahajan,20
+Statute,"Section 62 of the Insolvency and Bankruptcy Code, 2016",2
+LegalConcept,circumstantial evidence,2
+LegalConcept,compensation,5
+Statute,"Consumer Protection Act, 1986",3
+Statute,"Electricity Act, 2003",2
+LegalConcept,life imprisonment,3
+LegalConcept,enhancement of compensation,2
+LegalConcept,probate,3
+Judge,Surya Kant,18
+Statute,Article 374(4) of the Constitution of India,2
+LegalConcept,arbitration,2
+Statute,"Indian Penal Code, 1860",7
+LegalConcept,public policy,2
+Statute,Section 394 IPC,2
+Statute,Section 468 IPC,5
+Judge,Indira Banerjee,24
+Statute,Motor Vehicles Act,2
+Judge,Bhagwati J.,2
+LegalConcept,negligent driving,2
+Statute,"Companies Act, 1956",6
+Statute,Section 149 IPC,4
+Statute,Section 114 IPC,4
+LegalConcept,pension entitlement,2

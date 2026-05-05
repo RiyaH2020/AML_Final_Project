@@ -29,7 +29,7 @@ st.markdown("""
 .badge-vector { color:#2563eb; font-weight:700; background:#dbeafe; padding:0.2rem 0.5rem; border-radius:4px; font-size:0.8rem;}
 .badge-hybrid { color:#9333ea; font-weight:700; background:#f3e8ff; padding:0.2rem 0.5rem; border-radius:4px; font-size:0.8rem;}
 .card {
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(240, 247, 255, 0.85);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255,255,255,0.5);
     border-left: 4px solid #4f46e5;
@@ -50,7 +50,13 @@ st.markdown("""
 
 /* Premium App Background */
 .stApp {
-    background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+    background: linear-gradient(
+        135deg,
+        #ffffff 0%,
+        #fcfdff 35%,
+        #f8fbff 70%,
+        #f5faff 100%
+    );
 }
 
 .main .block-container {

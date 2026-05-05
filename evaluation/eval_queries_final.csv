@@ -1,0 +1,31 @@
+query_id,entity_type,entity_name,case_count,query,paraphrased_query
+Q01,LegalConcept,assessment order,3,What Supreme Court judgments discuss assessment order?,Please identify Supreme Court judgments that discuss assessment orders.
+Q02,Statute,Section 482 Cr.P.C.,2,What Supreme Court judgments discuss Section 482 Cr.P.C.?,Could you provide a list of Supreme Court judgments that analyze Section 482 of the Criminal Procedure Code?
+Q03,LegalConcept,stay of execution,2,What are the landmark judgments on stay of execution?,Could you identify the leading Indian judgments that establish the principles for granting a stay of execution?
+Q04,LegalConcept,reservation,3,Explain the doctrine of reservation with case law.,"Please elaborate on the doctrine of reservation, supported by pertinent Indian case law."
+Q05,Statute,Section 341 IPC,2,How has the Supreme Court interpreted Section 341 IPC?,What is the Supreme Court’s interpretation of Section 341 of the Indian Penal Code?
+Q06,Statute,Article 226 of the Constitution of India,6,How has the Supreme Court interpreted Article 226 of the Constitution of India?,What is the Supreme Court’s jurisprudential interpretation of Article 226 of the Constitution of India?
+Q07,Judge,Mehr Chand Mahajan,20,What important judgments were delivered by Justice Mehr Chand Mahajan?,Please identify the landmark judgments authored by Justice Mehr Chand Mahajan and summarize their principal legal holdings.
+Q08,Statute,"Section 62 of the Insolvency and Bankruptcy Code, 2016",2,"How has Section 62 of the Insolvency and Bankruptcy Code, 2016 been applied by the Supreme Court?","What is the Supreme Court’s jurisprudence on the application of Section 62 of the Insolvency and Bankruptcy Code, 2016?"
+Q09,LegalConcept,circumstantial evidence,2,What Supreme Court judgments discuss circumstantial evidence?,Please identify Supreme Court judgments that examine the principles and application of circumstantial evidence.
+Q10,LegalConcept,compensation,5,What legal precedent exists on compensation?,What Indian judicial precedents define the quantum of compensation awarded in civil claims?
+Q11,Statute,"Consumer Protection Act, 1986",3,"What precedent exists on Consumer Protection Act, 1986?","Please provide leading case law precedent interpreting the Consumer Protection Act, 1986."
+Q12,Statute,"Electricity Act, 2003",2,"What Supreme Court judgments discuss Electricity Act, 2003?","Kindly furnish a comprehensive list of Supreme Court judgments that interpret or apply the provisions of the Electricity Act, 2003."
+Q13,LegalConcept,life imprisonment,3,What Supreme Court judgments discuss life imprisonment?,"Kindly provide a list of Supreme Court judgments that examine the principle of life imprisonment, with citations and brief notes on the courts’ legal reasoning."
+Q14,LegalConcept,enhancement of compensation,2,What Supreme Court judgments discuss enhancement of compensation?,Could you provide a list of Supreme Court judgments that examine the enhancement of compensation?
+Q15,LegalConcept,probate,3,Explain the doctrine of probate with case law.,"Could you provide a concise yet thorough explanation of the doctrine of probate, supported by pertinent Indian case law?"
+Q16,Judge,Surya Kant,18,Which landmark cases were decided by Justice Surya Kant?,I seek a comprehensive list of landmark cases decided by Justice Surya Kant.
+Q17,Statute,Article 374(4) of the Constitution of India,2,How has Article 374(4) of the Constitution of India been applied by the Supreme Court?,Please provide an analysis of the Supreme Court’s interpretation and application of Article 374(4) of the Constitution of India.
+Q18,LegalConcept,arbitration,2,What legal precedent exists on arbitration?,"Could you identify the Indian judicial precedents governing arbitration, including the leading Supreme Court and High Court decisions?"
+Q19,Statute,"Indian Penal Code, 1860",7,"What Supreme Court judgments discuss Indian Penal Code, 1860?","Kindly list Supreme Court judgments that examine the Indian Penal Code, 1860."
+Q20,LegalConcept,public policy,2,What legal precedent exists on public policy?,Please cite Indian judicial precedents that articulate the doctrine of public policy and summarize the legal principles established in those decisions.
+Q21,Statute,Section 394 IPC,2,How has the Supreme Court interpreted Section 394 IPC?,What is the Supreme Court’s interpretation of Section 394 of the Indian Penal Code?
+Q22,Statute,Section 468 IPC,5,How has Section 468 IPC been applied by the Supreme Court?,Please elucidate how the Supreme Court has interpreted and applied Section 468 of the Indian Penal Code in its jurisprudence.
+Q23,Judge,Indira Banerjee,24,How has Justice Indira Banerjee shaped Supreme Court jurisprudence?,What is the extent of Justice Indira Banerjee’s contribution to the evolution of Supreme Court jurisprudence?
+Q24,Statute,Motor Vehicles Act,2,How has the Supreme Court interpreted Motor Vehicles Act?,What authoritative interpretations has the Supreme Court rendered on the Motor Vehicles Act?
+Q25,Judge,Bhagwati J.,2,How has Justice Bhagwati J. shaped Supreme Court jurisprudence?,In what ways has Justice Bhagwati J. influenced the evolution of Supreme Court jurisprudence?
+Q26,LegalConcept,negligent driving,2,What legal precedent exists on negligent driving?,Please provide Indian case law that sets precedent on negligent driving.
+Q27,Statute,"Companies Act, 1956",6,"What are the landmark cases involving Companies Act, 1956?","Please provide a list of the seminal judgments that have shaped the interpretation of the Companies Act, 1956."
+Q28,Statute,Section 149 IPC,4,What Supreme Court judgments discuss Section 149 IPC?,Could you list Supreme Court decisions interpreting Section 149 of the Indian Penal Code?
+Q29,Statute,Section 114 IPC,4,How has the Supreme Court interpreted Section 114 IPC?,What is the Supreme Court’s interpretation of Section 114 of the Indian Penal Code?
+Q30,LegalConcept,pension entitlement,2,How has the Supreme Court interpreted pension entitlement?,What is the Supreme Court’s jurisprudential interpretation of pension entitlement under Indian law?

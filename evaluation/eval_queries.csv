@@ -1,0 +1,31 @@
+query_id,entity_type,entity_name,case_count,query
+Q01,LegalConcept,assessment order,3,What Supreme Court judgments discuss assessment order?
+Q02,Statute,Section 482 Cr.P.C.,2,What Supreme Court judgments discuss Section 482 Cr.P.C.?
+Q03,LegalConcept,stay of execution,2,What are the landmark judgments on stay of execution?
+Q04,LegalConcept,reservation,3,Explain the doctrine of reservation with case law.
+Q05,Statute,Section 341 IPC,2,How has the Supreme Court interpreted Section 341 IPC?
+Q06,Statute,Article 226 of the Constitution of India,6,How has the Supreme Court interpreted Article 226 of the Constitution of India?
+Q07,Judge,Mehr Chand Mahajan,20,What important judgments were delivered by Justice Mehr Chand Mahajan?
+Q08,Statute,"Section 62 of the Insolvency and Bankruptcy Code, 2016",2,"How has Section 62 of the Insolvency and Bankruptcy Code, 2016 been applied by the Supreme Court?"
+Q09,LegalConcept,circumstantial evidence,2,What Supreme Court judgments discuss circumstantial evidence?
+Q10,LegalConcept,compensation,5,What legal precedent exists on compensation?
+Q11,Statute,"Consumer Protection Act, 1986",3,"What precedent exists on Consumer Protection Act, 1986?"
+Q12,Statute,"Electricity Act, 2003",2,"What Supreme Court judgments discuss Electricity Act, 2003?"
+Q13,LegalConcept,life imprisonment,3,What Supreme Court judgments discuss life imprisonment?
+Q14,LegalConcept,enhancement of compensation,2,What Supreme Court judgments discuss enhancement of compensation?
+Q15,LegalConcept,probate,3,Explain the doctrine of probate with case law.
+Q16,Judge,Surya Kant,18,Which landmark cases were decided by Justice Surya Kant?
+Q17,Statute,Article 374(4) of the Constitution of India,2,How has Article 374(4) of the Constitution of India been applied by the Supreme Court?
+Q18,LegalConcept,arbitration,2,What legal precedent exists on arbitration?
+Q19,Statute,"Indian Penal Code, 1860",7,"What Supreme Court judgments discuss Indian Penal Code, 1860?"
+Q20,LegalConcept,public policy,2,What legal precedent exists on public policy?
+Q21,Statute,Section 394 IPC,2,How has the Supreme Court interpreted Section 394 IPC?
+Q22,Statute,Section 468 IPC,5,How has Section 468 IPC been applied by the Supreme Court?
+Q23,Judge,Indira Banerjee,24,How has Justice Indira Banerjee shaped Supreme Court jurisprudence?
+Q24,Statute,Motor Vehicles Act,2,How has the Supreme Court interpreted Motor Vehicles Act?
+Q25,Judge,Bhagwati J.,2,How has Justice Bhagwati J. shaped Supreme Court jurisprudence?
+Q26,LegalConcept,negligent driving,2,What legal precedent exists on negligent driving?
+Q27,Statute,"Companies Act, 1956",6,"What are the landmark cases involving Companies Act, 1956?"
+Q28,Statute,Section 149 IPC,4,What Supreme Court judgments discuss Section 149 IPC?
+Q29,Statute,Section 114 IPC,4,How has the Supreme Court interpreted Section 114 IPC?
+Q30,LegalConcept,pension entitlement,2,How has the Supreme Court interpreted pension entitlement?

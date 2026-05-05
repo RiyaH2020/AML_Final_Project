@@ -95,7 +95,7 @@ class IngestionPipeline:
         self.graph.add_judgment(metadata, entities)
 
         # 4. Index chunks in vector store
-        self.vector.add_chunks(chunks)
+        # self.vector.add_chunks(chunks)
 
         return {
             "case_name":   metadata.case_name,
